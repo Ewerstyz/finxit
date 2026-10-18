@@ -89,7 +89,7 @@ try {
   }
   await call("emulate", { viewport: "1280x600x1" });
   await ev(
-    `async()=>{await new Promise(r=>setTimeout(r,100));if(!document.querySelector('.zoom-journey-static')||document.querySelector('#inicio video'))throw Error('Short mode');return {shortStatic:true};}`,
+    `async()=>{await new Promise(r=>setTimeout(r,150));if(!!document.querySelector('.zoom-journey-static')!==${reduced}||(!${reduced}&&!document.querySelector('#inicio video')))throw Error('Short screen scroll mode');return {shortStatic:${reduced}};}`,
   );
   await call("list_console_messages", { types: ["error"], pageSize: 30 });
   console.log("Opening review passed", reduced ? "reduced" : "normal");

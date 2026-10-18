@@ -133,7 +133,7 @@ try {
     );
     await call("emulate", { viewport: "1280x600x1" });
     await ev(
-      `async()=>{${wait}const e=document.getElementById('demo-sequence');if(!e.classList.contains('scene-static')||e.querySelector('video')||e.offsetHeight>innerHeight*2)throw Error('Short screen');return {shortStatic:true};}`,
+      `async()=>{${wait}const e=document.getElementById('demo-sequence');if(e.classList.contains('scene-static')||!e.querySelector('video')||e.offsetHeight<=innerHeight*2)throw Error('Short screen scroll mode');return {shortScroll:true};}`,
     );
   }
   const consoleResult = await call("list_console_messages", {

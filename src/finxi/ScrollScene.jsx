@@ -6,47 +6,14 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
+import { useScrollVideo } from "./useScrollVideo";
 
 function Film({ file, progress, start, position, label, staticMode, near }) {
-  const ref = useRef(null);
-  const [ready, setReady] = useState(false);
-  const [failed, setFailed] = useState(false);
-  useEffect(() => {
-    const video = ref.current;
-    if (!video || staticMode || failed) return;
-    let wanted = progress.get();
-    let frame = 0;
-    const seek = () => {
-      frame = 0;
-      if (!Number.isFinite(video.duration) || video.seeking) return;
-      const from = Math.min(start, video.duration - 0.05);
-      const time = from + wanted * Math.max(0, video.duration - from - 0.05);
-      if (Math.abs(video.currentTime - time) > 0.025) video.currentTime = time;
-      else if (video.readyState >= 2) setReady(true);
-    };
-    const schedule = () => {
-      if (!frame) frame = requestAnimationFrame(seek);
-    };
-    const complete = () => {
-      setReady(true);
-      schedule();
-    };
-    const unsubscribe = progress.on("change", (value) => {
-      wanted = Math.max(0, Math.min(1, value));
-      schedule();
-    });
-    video.addEventListener("loadedmetadata", schedule);
-    video.addEventListener("loadeddata", schedule);
-    video.addEventListener("seeked", complete);
-    schedule();
-    return () => {
-      unsubscribe();
-      cancelAnimationFrame(frame);
-      video.removeEventListener("loadedmetadata", schedule);
-      video.removeEventListener("loadeddata", schedule);
-      video.removeEventListener("seeked", complete);
-    };
-  }, [progress, start, staticMode, failed, near]);
+  const { videoRef, ready, failed, onError } = useScrollVideo({
+    progress,
+    start,
+    enabled: near && !staticMode,
+  });
   return (
     <div className="scene-film" style={{ "--film-position": position }}>
       <img
@@ -57,7 +24,7 @@ function Film({ file, progress, start, position, label, staticMode, near }) {
       />
       {!staticMode && !failed && near && (
         <video
-          ref={ref}
+          ref={videoRef}
           src={`/media/${file}.mp4`}
           poster={`/media/${file}-end.jpg`}
           preload="auto"
@@ -67,7 +34,7 @@ function Film({ file, progress, start, position, label, staticMode, near }) {
           height="720"
           aria-hidden="true"
           className={ready ? "is-ready" : ""}
-          onError={() => setFailed(true)}
+          onError={onError}
         />
       )}
     </div>
@@ -84,23 +51,8 @@ export function SequenceFilm({ progress, index, count, ...props }) {
 export function ScrollSequence({ id, chapters, children }) {
   const ref = useRef(null);
   const reduce = useReducedMotion();
-  const [short, setShort] = useState(
-    () =>
-      typeof window !== "undefined" &&
-      window.matchMedia(
-        "(max-height:639px), (max-width:700px) and (max-height:739px)",
-      ).matches,
-  );
-  useEffect(() => {
-    const query = matchMedia(
-      "(max-height:639px), (max-width:700px) and (max-height:739px)",
-    );
-    const update = () => setShort(query.matches);
-    query.addEventListener("change", update);
-    return () => query.removeEventListener("change", update);
-  }, []);
   const [saveData] = useState(() => navigator.connection?.saveData === true);
-  const staticMode = Boolean(reduce || short || saveData);
+  const staticMode = Boolean(reduce || saveData);
   const near = useInView(ref, { margin: "500px", once: true });
   const { scrollYProgress } = useScroll({
     target: ref,

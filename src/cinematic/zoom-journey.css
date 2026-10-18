@@ -8,7 +8,7 @@
   position: sticky;
   top: 0;
   height: 100svh;
-  min-height: 640px;
+  min-height: 0;
   overflow: hidden;
   isolation: isolate;
 }
@@ -315,5 +315,51 @@
   }
   .journey-static-copy {
     width: 100%;
+  }
+}
+@media (max-width: 600px) and (max-height: 739px) {
+  .zoom-journey:not(.zoom-journey-static) .journey-art,
+  .zoom-journey:not(.zoom-journey-static) .journey-film {
+    height: 30%;
+  }
+  .journey-copy {
+    bottom: 98px;
+  }
+  .journey-copy h1,
+  .journey-copy h2 {
+    font-size: clamp(28px, 8.5vw, 38px);
+  }
+  .journey-copy p {
+    font-size: 13.5px;
+    line-height: 1.45;
+    margin-top: 12px;
+  }
+  .journey-purpose-link {
+    margin-top: 8px;
+    min-height: 44px;
+    font-size: 14px;
+  }
+  .journey-navigation {
+    bottom: 10px;
+    gap: 4px;
+  }
+}
+@media (min-width: 601px) and (max-height: 639px) {
+  .journey-copy {
+    bottom: 84px;
+  }
+  .journey-copy h1,
+  .journey-copy h2 {
+    font-size: clamp(28px, 3.6vw, 44px);
+  }
+  .journey-copy p {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .journey-purpose-link {
+    margin-top: 8px;
+    min-height: 44px;
+    font-size: 14px;
   }
 }

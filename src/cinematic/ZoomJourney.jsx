@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
   useInView,
   useMotionValueEvent,
@@ -7,6 +7,7 @@ import {
 } from "motion/react";
 import { openingChapters as chapters } from "./opening-story";
 import media from "./opening-media.json";
+import { useScrollVideo } from "../finxi/useScrollVideo";
 import "./zoom-journey.css";
 
 function smooth(value) {
@@ -64,51 +65,16 @@ function ChapterText({ index, next, active = true }) {
 }
 // Seeking follows scroll in both directions. The film always remains paused.
 function OpeningFilm({ progress, currentProgress }) {
-  const ref = useRef(null);
-  const [ready, setReady] = useState(false);
-  const [failed, setFailed] = useState(false);
-  useEffect(() => {
-    const video = ref.current;
-    if (!video || failed || !media.file) return;
-    let wanted = progress.get();
-    let frame = 0;
-    const seek = () => {
-      frame = 0;
-      if (!Number.isFinite(video.duration) || video.seeking) return;
-      const from = media.progressStart || 0;
-      const time =
-        Math.max(0, Math.min(1, (wanted - from) / (1 - from))) *
-        Math.max(0, video.duration - 0.04);
-      if (Math.abs(video.currentTime - time) > 0.025) video.currentTime = time;
-      else if (video.readyState >= 2) setReady(true);
-    };
-    const schedule = () => {
-      if (!frame) frame = requestAnimationFrame(seek);
-    };
-    const complete = () => {
-      setReady(true);
-      schedule();
-    };
-    const stop = progress.on("change", (value) => {
-      wanted = value;
-      schedule();
-    });
-    video.addEventListener("loadedmetadata", schedule);
-    video.addEventListener("loadeddata", schedule);
-    video.addEventListener("seeked", complete);
-    schedule();
-    return () => {
-      stop();
-      cancelAnimationFrame(frame);
-      video.removeEventListener("loadedmetadata", schedule);
-      video.removeEventListener("loadeddata", schedule);
-      video.removeEventListener("seeked", complete);
-    };
-  }, [progress, failed]);
+  const { videoRef, ready, failed, onError } = useScrollVideo({
+    progress,
+    enabled: Boolean(media.file),
+    progressStart: media.progressStart || 0,
+    endPadding: 0.04,
+  });
   if (!media.file || failed) return null;
   return (
     <video
-      ref={ref}
+      ref={videoRef}
       src={`/media/${media.file}.mp4`}
       poster={`/media/${media.file}.jpg`}
       preload="auto"
@@ -121,29 +87,15 @@ function OpeningFilm({ progress, currentProgress }) {
       style={{
         opacity: ready && currentProgress >= (media.progressStart || 0) ? 1 : 0,
       }}
-      onError={() => setFailed(true)}
+      onError={onError}
     />
   );
 }
 export function ZoomJourney({ next = "#empresa" }) {
   const rig = useRef(null);
   const reduced = useReducedMotion();
-  const [short, setShort] = useState(
-    () =>
-      matchMedia(
-        "(max-height: 639px), (max-width: 700px) and (max-height: 739px)",
-      ).matches,
-  );
   const [saveData] = useState(() => navigator.connection?.saveData === true);
-  useEffect(() => {
-    const query = matchMedia(
-      "(max-height: 639px), (max-width: 700px) and (max-height: 739px)",
-    );
-    const update = () => setShort(query.matches);
-    query.addEventListener("change", update);
-    return () => query.removeEventListener("change", update);
-  }, []);
-  const staticMode = Boolean(reduced || short || saveData);
+  const staticMode = Boolean(reduced || saveData);
   const near = useInView(rig, { margin: "500px", once: true });
   const { scrollYProgress } = useScroll({
     target: rig,

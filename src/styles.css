@@ -422,7 +422,7 @@ input:focus-visible,
   position: sticky;
   top: 0;
   height: 100svh;
-  min-height: 640px;
+  min-height: 0;
   display: grid;
   grid-template-columns: 1fr 1.12fr;
   gap: 5vw;
@@ -1233,6 +1233,55 @@ input:focus-visible,
   }
   .demo-copy .section-kicker {
     margin-bottom: 14px;
+  }
+}
+@media (max-width: 760px) and (max-height: 739px) {
+  .demo-sequence:not(.scene-static) .scene-stage {
+    padding-top: 152px;
+    padding-bottom: 68px;
+    gap: 14px;
+  }
+  .demo-sequence:not(.scene-static) .demo-copy h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .demo-sequence:not(.scene-static) .demo-copy p {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .scene-controls {
+    bottom: 10px;
+  }
+}
+@media (min-width: 601px) and (max-height: 639px) {
+  .demo-sequence:not(.scene-static) .scene-stage {
+    padding-top: 152px;
+    padding-bottom: 64px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    grid-template-rows: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .demo-copy .section-kicker,
+  .demo-copy .text-link {
+    display: none;
+  }
+  .demo-sequence:not(.scene-static) .demo-copy h3 {
+    font-size: clamp(24px, 3vw, 36px);
+    margin-bottom: 8px;
+  }
+  .demo-sequence:not(.scene-static) .demo-copy p {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .scene-media figcaption {
+    flex-direction: column;
+    gap: 0;
+  }
+  .scene-film {
+    min-height: 0;
+  }
+  .scene-controls {
+    bottom: 8px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
