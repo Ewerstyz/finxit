@@ -1,0 +1,13 @@
+:root {
+  --targo-font: "Quantico", "Arial Narrow", sans-serif;
+  --targo-canvas: #f2f1f0;
+  --targo-accent: #15bcdf;
+  --targo-accent-hover: #3fd0ef;
+  --targo-accent-border: #0fa3c2;
+  --targo-heading: #2b3033;
+  --targo-nav: #3a3a3a;
+  --targo-copy: #6b6f72;
+  --targo-stair: min(238px, 28vw);
+  --targo-about-stair: min(160px, 18vw);
+  --targo-inset: clamp(20px, 9vw, 118px);
+}

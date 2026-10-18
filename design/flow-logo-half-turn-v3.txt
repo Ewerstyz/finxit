@@ -1,0 +1,13 @@
+Corrija SOMENTE a rotação do primeiro clipe. Preserve a logo original, a tela real do app, o fundo, a luz, o enquadramento e os demais clipes.
+
+UMA ÚNICA MEIA VOLTA DE 180° no eixo vertical, na mesma direção, com câmera totalmente fixa:
+
+0–1,5 s: logo original de frente, ângulo 0°, parada.
+1,5–3,5 s: logo rígida gira de 0° até exatamente 90°. Não deformar a logo.
+3,5 s: logo perfeitamente de lado, apenas uma linha vertical fina. NESTE ÚNICO FRAME, substituir pela lateral fina de um celular Android comum, no mesmo centro e eixo. Troca invisível escondida no ângulo de 90°.
+3,5–5,5 s: celular continua o MESMO giro, de 90° até 180°, revelando a tela real do FinxiIT de frente. São apenas 90° adicionais, NÃO uma nova volta.
+5,5–10 s: celular totalmente frontal e ESTÁTICO. Nenhuma rotação, balanço, zoom ou movimento de câmera. Manter esse frame até o fim.
+
+O ÂNGULO TOTAL NUNCA ULTRAPASSA 180°. Proibido 360°, segundo giro, reiniciar em 0°, overshoot, mostrar a traseira do celular, câmera orbitando, morph, blend/fade na troca ou partículas. Nunca aplicar a logo na carcaça: FinxiIT é um aplicativo. A tela deve permanecer fiel, legível, sem espelhar, inventar menus, valores ou letras.
+
+Prioridade: LOGO FRONTAL → 90°/TROCA → CELULAR FRONTAL A 180° → PARADO.

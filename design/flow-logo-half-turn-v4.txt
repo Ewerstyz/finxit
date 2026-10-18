@@ -1,0 +1,13 @@
+8-second 16:9 product motion film. Use ingredient 1 ONLY for the exact FinxiIT logo and ingredient 2 ONLY for the authentic app screen. FinxiIT is an app, not a hardware brand.
+
+LOCKED CAMERA. One rigid object rotates around one vertical axis, in one direction, from 0 to 180 degrees TOTAL. Fixed center at x=74%, fixed scale, deep navy background, soft cobalt light, left 45% quiet.
+
+0–1.3s: exact original logo faces the camera, motionless. No added lettering.
+1.3–3.3s: logo turns ONLY 90 degrees, becoming a razor-thin vertical edge. Preserve the logo's geometry throughout.
+AT EXACTLY 90 DEGREES: instantaneous hidden substitution of that edge with the thin side edge of a generic Android phone, same center and axis. No blend, fade or morph. The phone screen starts facing away and sideways; its BACK IS NEVER VISIBLE.
+3.3–5.3s: continue the SAME turn for ONLY 90 more degrees, opening the APP SCREEN toward the camera. Do not restart the phone's rotation. The accumulated angle reaches 180 degrees and stops.
+5.3–8s: identical STATIC front-facing phone and real app screen. All motion ends. No drift, wobble, zoom or additional turn.
+
+FORBIDDEN: 360 degree rotation, second turn, overshoot past 180, phone back or camera lenses, camera orbit, ribbons wrapping around the object, particles, morphing, extra text, changed logo, made-up UI, menus or numbers, mirrored screen, FinxiIT branding on phone body. Preserve the supplied screenshot as the screen texture. No narration, music or subtitles.
+
+ONLY: LOGO FRONT → 90° EDGE / SWAP → APP SCREEN FRONT AT 180° → HOLD STILL.

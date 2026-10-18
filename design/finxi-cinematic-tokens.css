@@ -1,0 +1,13 @@
+:root {
+  --blue: #0755ed;
+  --deep: #09234a;
+  --paper: #fff;
+  --mist: #eef3fa;
+  --ink: #17202b;
+  --muted: #566574;
+  --display: "Space Grotesk", "Manrope Variable", sans-serif;
+  --font: "Manrope Variable", sans-serif;
+  --gutter: clamp(24px, 6vw, 100px);
+  --section-space: clamp(72px, 8vw, 128px);
+  --content-width: 1280px;
+}

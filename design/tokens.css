@@ -1,0 +1,35 @@
+:root {
+  --brand: #0649ff;
+  --brand-hover: #0038cc;
+  --ink: #17253c;
+  --muted: #56657a;
+  --canvas: #ffffff;
+  --surface: #f7f9fc;
+  --line: #e1e7ef;
+  --navy: #071b42;
+  --mint: #b2f1d7;
+  --film-stage: #071b42;
+  --strategy-surface: #eeebff;
+  --marketing-surface: #fbefe5;
+  --finance-surface: #eef3ff;
+  --type-display: clamp(47px, 6.6vw, 98px);
+  --type-section: clamp(34px, 3.7vw, 53px);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --radius-sm: 10px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --page-width: 1376px;
+  --shadow-card: 0 18px 60px #10244d12;
+  --font-body: "Manrope Variable", "Segoe UI", sans-serif;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 180ms;
+  --duration-reveal: 550ms;
+}

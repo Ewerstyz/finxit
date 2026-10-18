@@ -1,0 +1,7 @@
+FINXIIT — LOGO DIRECTLY TO APP SCREEN. 10-second, 16:9 motion design film. FinxiIT is SOFTWARE, not a phone manufacturer. Animate only the two supplied reference images: original FinxiIT logo and exact real app screenshot.
+
+0–3 s: original flat blue logo on deep navy #020b1b, centered at x=74%, restrained soft light. Preserve its exact silhouette. Slow 4% zoom.
+3–6 s: direct BLEND / ALPHA CROSS-DISSOLVE from logo to the supplied upright flat app screenshot at the same position. Logo fades out as screenshot fades in. Smooth ease-in-out, matching alignment and scale. Do not morph shapes, redraw text or create an intermediate object.
+6–10 s: show the complete ORIGINAL SCREENSHOT as a flat 2D image plane, fully readable, upright, front-facing. Gentle 3% push-in, then settle. Keep the left 45% dark for website text. Navy and cobalt only, subtle lighting, premium restrained composition.
+
+HARD CONSTRAINTS: NO physical phone, phone body, bezel, back panel, camera lens, buttons, device rotation, logo on hardware, branded device, new interface, invented menus, invented numbers, altered Portuguese text, 3D dashboard, holograms, extra symbols, particles, map, people, subtitle, narration or music. Do not hallucinate or embellish. Keep reference pixels and geometry unchanged. Use a simple dissolve if anything more elaborate would distort the real logo or screen. The end frame is ONLY the authentic app screenshot on navy.

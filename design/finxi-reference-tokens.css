@@ -1,0 +1,23 @@
+:root {
+  --font: "Quantico", "Arial Narrow", sans-serif;
+  --canvas: #f2f1f0;
+  --surface: #f7f6f8;
+  --ink: #2b3033;
+  --muted: #6b6f72;
+  --brand: #0649ff;
+  --brand-hover: #0038cc;
+  --line: #d8dbe1;
+  --inset: clamp(20px, 8.2vw, 118px);
+  --stair: min(238px, 24vw);
+  --about-stair: min(160px, 12vw);
+  --section-space: clamp(64px, 8vw, 118px);
+  --radius: 0;
+  --chamfer: polygon(
+    0 0,
+    calc(100% - 16px) 0,
+    100% 16px,
+    100% 100%,
+    16px 100%,
+    0 calc(100% - 16px)
+  );
+}

@@ -1,0 +1,19 @@
+{
+  "file": "finxi-flow-full-film-v1",
+  "duration": 17.5,
+  "width": 1280,
+  "height": 720,
+  "status": "integrated-user-flow-film-with-local-blend",
+  "posters": [
+    "/media/finxi-flow-full-film-v1.jpg",
+    "/media/finxi-flow-full-film-v1-app.jpg",
+    "/media/finxi-flow-full-film-v1-people.jpg",
+    "/media/finxi-flow-full-film-v1-end.jpg"
+  ],
+  "sources": {
+    "opening": "Complete Google Flow film supplied by the user on 2026-10-03; all four original moments preserved",
+    "localPolish": "Short eased blends at the two clip joins; no new scene, object, logo or interface",
+    "original": "referência\\videos\\filme-completo-2026-10-03\\finxi-flow-original.mp4",
+    "originalSha256": "539bc0b13a329c1e838db3e69e8b79cfad53680ab816bab5a44c723dc0d6d92e"
+  }
+}

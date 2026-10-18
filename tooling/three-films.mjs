@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+let p='src/components/ScrollStory.jsx',s=fs.readFileSync(p,'utf8');
+const start=s.indexOf('const chapters = ['); const end=s.indexOf('export function ScrollStory()');
+s=s.slice(0,start)+'import { episodes } from "@/episodes";\n'+s.slice(end);
+s=s.replace('export function ScrollStory() {','export function ScrollStory({ episode = episodes[0] }) {\n  const { chapters } = episode;');
+s=s.replace('id="experiencia"','id={episode.id}').replace('aria-label="Explore o aplicativo com a rolagem"','aria-label={`${episode.number}. ${episode.label}`}');
+s=s.replace('<span>Conheça o aplicativo</span>','<span><strong>{episode.number} / 03</strong> {episode.label}</span>').replace('href="#produto" className="skip-story"','href={episode.next} className="skip-story"');
+s=s.replace('src="/media/finxi-product.mp4"','src={`/media/${episode.file}.mp4`}').replace('poster="/media/finxi-product.jpg"','poster={`/media/${episode.file}.jpg`}');
+s=s.replace('aria-label="Filme de apresentação: aproximação do saldo, revelação das ações rápidas e visão completa do celular com o aplicativo FinxiIT."','aria-label={episode.description}');
+s=s.replace('src="/media/finxi-product-end.jpg"','src={`/media/${episode.file}-end.jpg`}').replace('alt="Visão do aplicativo FinxiIT em um celular, com saldo e ações rápidas."','alt={episode.description}');
+s=s.replace(/<figcaption>[\s\S]*?<\/figcaption>/,'<figcaption>{episode.caption}</figcaption>');
+s=s.replace('aria-label="Progresso da apresentação"','aria-label={`Progresso: ${episode.label}`}');
+s=s.replace('["Caixa", "Rotina", "Visão completa"].map','episode.tabs.map');
+fs.writeFileSync(p,s);

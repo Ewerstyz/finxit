@@ -1,0 +1,25 @@
+node_modules/
+dist/
+*.log
+.env*
+!.env.example
+.runtime/
+
+# Local caches, attachment copies and previous versions
+.pnpm-store/
+.codex-remote-attachments/
+archive/
+
+# Original documents, full business plan and production inputs stay local.
+# All assets needed to run the site are included under public/.
+referência/
+
+# Browser logs, screenshots and intermediate media used only for local QA
+design/qa/
+
+# Editor and operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.bak

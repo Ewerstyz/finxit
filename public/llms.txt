@@ -1,0 +1,15 @@
+# FinxiIT
+
+> Gestão e inteligência para pequenos negócios. Aplicativo Android com organização financeira, estratégia e marketing apoiados por IA.
+
+## Conteúdo
+
+- [Início](/#inicio): gestão e inteligência para seu negócio.
+- [Sobre](/#sobre): apresentação da FinxiIT com a tela de Relatórios.
+- [Aplicativo](/#aplicativo): Financeiro, Estratégia com IA e Marketing; problemas, soluções e recursos.
+- [Empresa](/#empresa): missão, visão e valores.
+- [Assistente](/#inteligencia): assistência baseada no contexto do negócio.
+- [Arquitetura](/#arquitetura): como serviços especializados de IA são utilizados e como os dados são tratados.
+- [Android](/#download): canal oficial de download configurável.
+
+Telas demonstrativas com dados fictícios. Os filmes do aplicativo avançam com a rolagem e permanecem pausados. A imagem editorial de Marketing é ilustrativa e gerada por IA. Missão, visão e valores são formulações editoriais baseadas no projeto. O site apresenta o aplicativo, sem executar consultas de IA. As funções disponíveis dependem da versão distribuída. O link Android depende da configuração do destino oficial.

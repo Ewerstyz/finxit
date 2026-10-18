@@ -1,0 +1,41 @@
+import media from "./opening-media.json";
+export const openingChapters = [
+  {
+    name: "FinxiIT",
+    title: "Gestão simples. Decisões mais claras.",
+    text: "A FinxiIT aproxima tecnologia e pequenos negócios. Começamos pela organização financeira, com clareza para quem cuida de tudo.",
+    image: media.posters?.[0] || "/assets/finxi_brand.webp",
+    brandIcon: !media.posters?.[0],
+    alt: "Símbolo original azul da FinxiIT sobre um fundo tecnológico escuro.",
+    start: 0,
+    jump: 0,
+  },
+  {
+    name: "O app",
+    title: "Seu negócio ganha um ponto de clareza.",
+    text: "Um protótipo Android para reunir registros, acompanhar os números e entender a rotina financeira. O próximo passo é validar com quem vai usar.",
+    image: "/assets/finxi-inicio-original.jpeg",
+    flatScreen: true,
+    alt: "Captura original enviada da tela inicial FinxiIT: saldo, ações rápidas em duas colunas e resumo financeiro.",
+    start: 0.23,
+    jump: 0.29,
+  },
+  {
+    name: "As pessoas",
+    title: "Tecnologia que acompanha pessoas.",
+    text: "Para MEIs e pequenos empreendedores que acompanham pessoalmente as vendas e os gastos. A tecnologia apoia; você continua no comando.",
+    image: media.posters?.[2] || "/assets/finxi-people-technology.webp",
+    alt: "Cena ilustrativa de duas pessoas usando celulares em um ambiente de tecnologia.",
+    start: 0.43,
+    jump: 0.59,
+  },
+  {
+    name: "As conexões",
+    title: "Começar perto. Construir para ir além.",
+    text: "Nossa validação começa em Venda Nova do Imigrante, no Espírito Santo. Crescer para outras regiões depende de utilidade comprovada e preparo para atender.",
+    image: media.posters?.[3] || "/assets/finxi-tech-network.webp",
+    alt: "Representação conceitual do Brasil conectado por uma rede digital azul; não representa cobertura de usuários.",
+    start: 0.78,
+    jump: 0.94,
+  },
+];
