@@ -46,7 +46,7 @@ export const businessPlan = {
     },
     {
       initials: "IR",
-      name: "Issac da Silva Rodrigues",
+      name: "Isaac da Silva Rodrigues",
       role: "Pesquisa e testes",
       text: "Pesquisa regional, participantes e acompanhamento dos testes.",
     },
